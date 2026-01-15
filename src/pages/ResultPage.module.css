@@ -227,3 +227,45 @@
     word-break: keep-all;
     margin: 0;
 }
+
+/* Spread Labels */
+.spreadLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+}
+
+.spreadIdx {
+    background: #FFD700;
+    color: #1a0b2e;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.spreadTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.spreadSub {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 600px) {
+    .spreadLabel {
+        justify-content: center;
+    }
+}

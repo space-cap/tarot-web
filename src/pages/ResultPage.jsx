@@ -6,10 +6,16 @@ import Header from '../components/common/Header';
 import styles from './ResultPage.module.css';
 import cardBackImage from '../assets/cards/tarot_card_back.png';
 
+const SPREAD_LABELS = [
+    { title: "현재의 상황", sub: "Present Situation" },
+    { title: "조언과 지혜", sub: "Advice & Wisdom" },
+    { title: "미래의 결과", sub: "Future Outcome" }
+];
+
 const ResultPage = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const { selectedCards, question } = location.state || {}; // Get question from state
+    const { selectedCards, question } = location.state || {};
 
     useEffect(() => {
         if (!selectedCards || selectedCards.length === 0) {
@@ -74,7 +80,7 @@ const ResultPage = () => {
                                     <div className={styles.cardFront}>
                                         <img src={card.image} alt={card.name_ko} />
                                     </div>
-                                    {/* Back (Visual only, logically flipping from back to front) */}
+                                    {/* Back */}
                                     <div className={styles.cardBack}>
                                         <img src={cardBackImage} alt="Back" />
                                     </div>
@@ -87,7 +93,13 @@ const ResultPage = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: (index * 0.3) + 0.5 }}
                             >
-                                <h3 className={styles.cardName}>{index + 1}. {card.name_ko} <span className={styles.cardNameEn}>({card.name_en})</span></h3>
+                                <div className={styles.spreadLabel}>
+                                    <span className={styles.spreadIdx}>{index + 1}</span>
+                                    <span className={styles.spreadTitle}>{SPREAD_LABELS[index]?.title}</span>
+                                    <span className={styles.spreadSub}>{SPREAD_LABELS[index]?.sub}</span>
+                                </div>
+
+                                <h3 className={styles.cardName}>{card.name_ko} <span className={styles.cardNameEn}>({card.name_en})</span></h3>
                                 <div className={styles.keywords}>
                                     {card.keywords.map(kw => <span key={kw}>#{kw}</span>)}
                                 </div>
