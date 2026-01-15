@@ -42,22 +42,61 @@
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
+    /* Parent perspective for 3D effect of child */
+    perspective: 1000px;
 }
 
 .cardWrapper {
-    perspective: 1000px;
     width: 120px;
     height: 200px;
     flex-shrink: 0;
+    position: relative;
+    /* Crucial for 3D flip */
+    transform-style: preserve-3d;
 }
 
-.cardWrapper img {
+.cardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.cardFront,
+.cardBack {
+    position: absolute;
+    /* Stack them */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Hide backface */
+    backface-visibility: hidden;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid #FFD700;
+}
+
+.cardFront {
+    transform: rotateY(0deg);
+    /* Front is at 0 */
+    background-color: #1a0b2e;
+    /* Fallback */
+}
+
+.cardBack {
+    transform: rotateY(180deg);
+    /* Back is rotated 180 initially */
+    background-color: #1a0b2e;
+}
+
+.cardFront img,
+.cardBack img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    border: 1px solid #FFD700;
 }
 
 .interpretation {
@@ -135,7 +174,6 @@
 .shareBtn:hover {
     background: linear-gradient(90deg, #ffe033 0%, #fec85d 100%);
     color: #1a0b2e;
-    /* Ensure text color stays dark */
     box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
 }
 
