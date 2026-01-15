@@ -197,3 +197,33 @@
         justify-content: center;
     }
 }
+
+.questionBox {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.qLabel {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+}
+
+.qText {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: -0.5px;
+    line-height: 1.4;
+    word-break: keep-all;
+    margin: 0;
+}

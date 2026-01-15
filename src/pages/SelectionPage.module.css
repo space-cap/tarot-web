@@ -14,7 +14,6 @@
     align-items: center;
     justify-content: flex-start;
     padding-top: 100px;
-    /* Space for header */
 }
 
 .statusMessage {
@@ -52,6 +51,62 @@
     transform: scale(1.2);
 }
 
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+    z-index: 10;
+}
+
+.inputField {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.inputField:focus {
+    border-color: #FFD700;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.inputField::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.submitBtn {
+    background: linear-gradient(90deg, #FFD700 0%, #FDB931 100%);
+    color: #1a0b2e;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.submitBtn:hover {
+    transform: scale(1.05);
+}
+
+.submitBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
 .deckContainer {
     position: relative;
     width: 90%;
@@ -67,7 +122,6 @@
 .card {
     width: 80px;
     height: 130px;
-    /* Aspect 1:1.6 approx */
     border-radius: 6px;
     cursor: pointer;
     position: relative;
@@ -131,4 +185,31 @@
         width: 50px;
         height: 80px;
     }
+}
+
+.chipContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    max-width: 600px;
+    margin-top: -10px;
+}
+
+.chip {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+}
+
+.chip:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: #FFD700;
+    color: #FFD700;
+    transform: translateY(-2px);
 }

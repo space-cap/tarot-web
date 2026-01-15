@@ -9,7 +9,7 @@ import cardBackImage from '../assets/cards/tarot_card_back.png';
 const ResultPage = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const { selectedCards } = location.state || {};
+    const { selectedCards, question } = location.state || {}; // Get question from state
 
     useEffect(() => {
         if (!selectedCards || selectedCards.length === 0) {
@@ -24,7 +24,7 @@ const ResultPage = () => {
             try {
                 await navigator.share({
                     title: '타로2026 - 나의 신년 운세',
-                    text: `제가 뽑은 2026년 행운의 카드는 ${selectedCards.map(c => c.name_ko).join(', ')} 입니다!`,
+                    text: `Q: ${question || '2026년 운세'}\n결과: ${selectedCards.map(c => c.name_ko).join(', ')}`,
                     url: window.location.href,
                 });
             } catch (error) {
@@ -40,13 +40,24 @@ const ResultPage = () => {
             <Header />
 
             <main className={styles.main}>
-                <motion.h1
-                    className={styles.title}
+                {/* User Question Display */}
+                <motion.div
+                    className={styles.questionBox}
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    당신의 2026년 운세
+                    <span className={styles.qLabel}>Q.</span>
+                    <h2 className={styles.qText}>{question || "당신의 2026년 운세"}</h2>
+                </motion.div>
+
+                <motion.h1
+                    className={styles.title}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                >
+                    운명의 해답
                 </motion.h1>
 
                 <div className={styles.cardsContainer}>
