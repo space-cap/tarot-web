@@ -1,0 +1,83 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #AAA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    font-weight: 300;
+    margin: 0;
+}
+
+.cardVisual {
+    margin: 2rem 0;
+}
+
+.floatingCard {
+    width: 140px;
+    height: 220px;
+    background: linear-gradient(135deg, #1a0b2e 0%, #2E004F 100%);
+    border: 2px solid #FFD700;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(46, 0, 79, 0.6);
+    position: relative;
+}
+
+.floatingCard::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 8px;
+}
+
+.startBtn {
+    margin-top: 1rem;
+    background: linear-gradient(90deg, #FFD700 0%, #FDB931 100%);
+    color: #1a0b2e;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 16px 48px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+}

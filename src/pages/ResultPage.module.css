@@ -1,0 +1,161 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 20px 40px;
+    overflow-y: auto;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(to right, #fff, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.resultItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.cardWrapper {
+    perspective: 1000px;
+    width: 120px;
+    height: 200px;
+    flex-shrink: 0;
+}
+
+.cardWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid #FFD700;
+}
+
+.interpretation {
+    text-align: left;
+    flex: 1;
+}
+
+.cardName {
+    font-size: 1.5rem;
+    color: #FFD700;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.cardNameEn {
+    font-size: 1rem;
+    color: #aaa;
+    font-weight: 400;
+}
+
+.keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.keywords span {
+    background: rgba(255, 215, 0, 0.1);
+    color: #FFD700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.desc {
+    line-height: 1.6;
+    color: #ddd;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.actions {
+    margin-top: 3rem;
+    display: flex;
+    gap: 16px;
+}
+
+.actionBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.2s;
+}
+
+.actionBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.shareBtn {
+    background: linear-gradient(90deg, #FFD700 0%, #FDB931 100%);
+    color: #1a0b2e;
+    border: none;
+}
+
+.shareBtn:hover {
+    background: linear-gradient(90deg, #ffe033 0%, #fec85d 100%);
+    color: #1a0b2e;
+    /* Ensure text color stays dark */
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+@media (max-width: 600px) {
+    .resultItem {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .interpretation {
+        text-align: center;
+    }
+
+    .cardName {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .keywords {
+        justify-content: center;
+    }
+}
