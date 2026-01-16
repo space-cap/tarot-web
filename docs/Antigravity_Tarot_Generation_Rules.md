@@ -16,33 +16,45 @@
 
 ---
 
-## 2. Prompt Template (프롬프트 양식)
+## 2. Text Layout & Numeral Rules (텍스트 배치 규칙)
 
-`generate_image` 툴의 `Prompt` 인자를 작성할 때 다음 포맷을 사용하십시오.
+카드에 포함되는 텍스트 위치와 숫자 형식을 명확히 지정해야 합니다.
 
-```markdown
-Tarot card design for '{English Name}'. Keywords: {Keywords}. Meaning: {Visual Meaning Description}. Art style: Mystical, fantasy, high detailed, Rider-Waite Smith inspired, digital art, 8k resolution, vertical aspect ratio (9:16).
-```
-
-*   **{English Name}**: 카드의 영문명 (예: The Sun)
-*   **{Korean Name}**: 카드의 한글명 (예: 태양)
-*   **{Keywords}**: 핵심 키워드 3~4개 (예: Success, Joy)
-*   **{Visual Meaning Description}**: 추상적인 의미보다는 **'화면에 보여야 할 시각적 요소'** 위주로 서술하십시오.
-    *   *Bad*: "기다리던 소식이 온다." (너무 추상적)
-    *   *Good*: "하늘에서 천사가 나팔을 불고 있고, 사람들이 기뻐하며 하늘을 쳐다본다." (구체적)
+*   **Layout**:
+    *   **Top (상단)**: 카드 번호 (Number)
+    *   **Bottom (하단)**: 카드 영문 이름 (English Name)
+*   **Number Format**:
+    *   **The Fool**: 숫자 **`0`** (아라비아 숫자) 사용.
+    *   **Other Major Arcana**: **로마자 (Roman Numerals)** 사용 (e.g., I, II, III ... XXI).
+    *   **Minor Arcana**: 하단에 이름만 표기하거나, 상단에 숫자만 표기.
 
 ---
 
-## 3. Output Format & Aspect Ratio (출력 형식)
+## 3. Prompt Template (프롬프트 양식)
+
+`generate_image` 툴의 `Prompt` 인자를 작성할 때 다음 포맷을 사용하십시오.
+**Meaning 부분에 텍스트 배치에 대한 지시사항을 반드시 포함해야 합니다.**
+
+```markdown
+Tarot card design for '{English Name}'. Keywords: {Keywords}. Meaning: {Visual Meaning Description}. Text layout: Number '{Number}' on top, Name '{English Name}' on bottom. Art style: Mystical, fantasy, high detailed, Rider-Waite Smith inspired, digital art, 8k resolution, vertical aspect ratio (9:16).
+```
+
+*   **{English Name}**: 카드의 영문명 (예: The Sun)
+*   **{Number}**: 카드의 번호 (The Fool은 '0', 나머지는 'XIX', 'XXI' 등 로마자)
+*   **{Keywords}**: 핵심 키워드 3~4개 (예: Success, Joy)
+*   **{Visual Meaning Description}**: 화면에 보여야 할 시각적 요소 위주로 서술.
+
+---
+
+## 4. Output Format & Aspect Ratio (출력 형식)
 
 타로 카드는 반드시 **세로형(Vertical/Portrait)**이어야 하며, 구체적으로 **9:16 비율**을 지향합니다.
 
 *   제공된 `generate_image` 툴이 비율(Aspect Ratio) 설정 파라미터를 지원하지 않으므로, 프롬프트 내의 **`vertical aspect ratio (9:16)`** 키워드가 누락되지 않도록 특히 주의하십시오.
-*   정사각형(1:1)이나 가로형(Landscape) 이미지가 생성되지 않도록 프롬프트 앞부분에 `Tarot card design`이라는 맥락을 명확히 명시해야 합니다.
 
 ---
 
-## 4. Image Naming Convention (파일 작명 규칙)
+## 5. Image Naming Convention (파일 작명 규칙)
 
 생성된 이미지를 저장하거나 이동할 때 다음 규칙을 따르십시오.
 
@@ -51,25 +63,10 @@ Tarot card design for '{English Name}'. Keywords: {Keywords}. Meaning: {Visual M
 
 ---
 
-## 5. Minor Arcana Color Themes (확장 규칙)
-
-마이너 아르카나 생성 시에는 `Art style` 앞에 **Suit별 색상 테마**를 살짝 추가하여 구분을 줍니다. 단, **Absolute Style Tokens**는 그대로 유지합니다.
-
-*   **Wands (불)**: `Warm lighting, fire elements, red and orange tones. `
-*   **Cups (물)**: `Soft dreamlike atmosphere, water elements, blue and cyan tones. `
-*   **Swords (공기)**: `Sharp contrast, wind elements, grey, pale blue and silver tones. `
-*   **Pentacles (땅)**: `Nature elements, vines and flowers, green, brown and gold tones. `
-
-**적용 예시 (Wands):**
-> ... Meaning: A hand holding a sprouting wand. **Warm lighting, fire elements, red and orange tones.** Art style: Mystical, fantasy, ... (이하 동일)
-
----
-
 ## 6. Agent Behavior Checklist
 
 이미지를 생성하기 전 스스로 다음을 체크하십시오:
 
-1.  [ ] **스타일 토큰 확인**: `vertical aspect ratio (9:16)`을 포함한 전체 문자열이 정확한가?
-2.  [ ] **비율 키워드 확인**: `(9:16)` 수치가 명시되었는가?
+1.  [ ] **텍스트 배치 확인**: 상단 숫자(로마자/0), 하단 영문 이름 배치를 프롬프트에 포함했는가?
+2.  [ ] **스타일 토큰 확인**: `vertical aspect ratio (9:16)`을 포함한 전체 문자열이 정확한가?
 3.  [ ] **형식 확인**: `Tarot card design for...` 로 시작하는 표준 템플릿을 사용했는가?
-4.  [ ] **구체성 확인**: `Meaning` 부분이 AI가 그림으로 그릴 수 있도록 시각적으로 묘사되었는가?
