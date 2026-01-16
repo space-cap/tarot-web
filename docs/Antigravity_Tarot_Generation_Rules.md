@@ -21,7 +21,7 @@
 `generate_image` 툴의 `Prompt` 인자를 작성할 때 다음 포맷을 사용하십시오.
 
 ```markdown
-Tarot card design for '{English Name}' ({Korean Name}). Keywords: {Keywords}. Meaning: {Visual Meaning Description}. Art style: Mystical, fantasy, high detailed, Rider-Waite Smith inspired, digital art, 8k resolution, vertical aspect ratio (9:16).
+Tarot card design for '{English Name}'. Keywords: {Keywords}. Meaning: {Visual Meaning Description}. Art style: Mystical, fantasy, high detailed, Rider-Waite Smith inspired, digital art, 8k resolution, vertical aspect ratio (9:16).
 ```
 
 *   **{English Name}**: 카드의 영문명 (예: The Sun)
