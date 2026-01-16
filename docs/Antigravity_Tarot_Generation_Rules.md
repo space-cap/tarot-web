@@ -36,7 +36,8 @@
 **Meaning 부분에 텍스트 배치에 대한 지시사항을 반드시 포함해야 합니다.**
 
 ```markdown
-Tarot card design for '{English Name}'. Keywords: {Keywords}. Meaning: {Visual Meaning Description}. Text layout: Number '{Number}' on top, Name '{English Name}' on bottom. Art style: Mystical, fantasy, high detailed, Rider-Waite Smith inspired, digital art, 8k resolution, vertical aspect ratio (9:16).
+Tarot card design for '{English Name}'. Keywords: {Keywords}. Meaning: {Visual Meaning Description}. Text layout: Number '{Number}' on top, Name '{English Name}' on bottom. Art style: Mystical, fantasy, high detailed, Rider-Waite Smith inspired, digital art, 8k resolution, vertical aspect ratio (9:16), full frame design.
+Constraint: Main character must appear ONLY ONCE in the center. Background must be abstract pattern or simple texture. NO ghosting, NO repeated faces in background, clean decorative border.
 ```
 
 *   **{English Name}**: 카드의 영문명 (예: The Sun)
