@@ -9,7 +9,7 @@
 
 모든 카드 생성 요청 시, **`Art style` 파라미터는 아래의 문자열을 토씨 하나 틀리지 않고 그대로 사용**해야 합니다. 이것이 전체 덱의 시각적 일관성(Visual Consistency)을 보장하는 핵심입니다.
 
-> **`Art style: Classic Rider-Waite-Smith style tarot illustration. Bold black outlines, rich flat colors, subtle vintage paper texture.`**
+> **`Art style: Mystical fantasy tarot illustration, ultra-detailed, Rider-Waite-Smith inspired iconography. Bold consistent linework, rich deep colors, subtle magical atmosphere.`**
 
 *   **변경 금지**: 순서를 바꾸거나, 단어를 추가/삭제하지 마십시오.
 *   **추가 금지**: "Watercolor", "Oil painting", "Realistic" 등의 다른 스타일 수식어를 절대 섞지 마십시오.
@@ -38,7 +38,7 @@
 ```markdown
 Tarot card design for “{English Name}”.
 Visual meaning: {Visual Meaning Description}.
-Art style: Classic Rider-Waite-Smith style tarot illustration. Bold black outlines, rich flat colors, subtle vintage paper texture.
+Art style: Mystical fantasy tarot illustration, ultra-detailed, Rider-Waite-Smith inspired iconography. Bold consistent linework, rich deep colors, subtle magical atmosphere.
 Composition: Single central focus, clear symbolic storytelling, no clutter.
 Frame: Decorative tarot border.
 Text layout: Roman number “{Number}” on top, English name “{English Name}” on bottom.
