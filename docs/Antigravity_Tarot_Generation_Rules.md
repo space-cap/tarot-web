@@ -33,7 +33,16 @@ Tarot card design for '{English Name}' ({Korean Name}). Keywords: {Keywords}. Me
 
 ---
 
-## 3. Image Naming Convention (파일 작명 규칙)
+## 3. Output Format & Aspect Ratio (출력 형식)
+
+타로 카드는 반드시 **세로형(Vertical/Portrait)**이어야 합니다.
+
+*   제공된 `generate_image` 툴이 비율(Aspect Ratio) 설정 파라미터를 지원하지 않으므로, 프롬프트 내의 **`vertical aspect ratio`** 키워드가 누락되지 않도록 특히 주의하십시오.
+*   정사각형(1:1)이나 가로형(Landscape) 이미지가 생성되지 않도록 프롬프트 앞부분에 `Tarot card design`이라는 맥락을 명확히 명시해야 합니다.
+
+---
+
+## 4. Image Naming Convention (파일 작명 규칙)
 
 생성된 이미지를 저장하거나 이동할 때 다음 규칙을 따르십시오.
 
@@ -42,7 +51,7 @@ Tarot card design for '{English Name}' ({Korean Name}). Keywords: {Keywords}. Me
 
 ---
 
-## 4. Minor Arcana Color Themes (확장 규칙)
+## 5. Minor Arcana Color Themes (확장 규칙)
 
 마이너 아르카나 생성 시에는 `Art style` 앞에 **Suit별 색상 테마**를 살짝 추가하여 구분을 줍니다. 단, **Absolute Style Tokens**는 그대로 유지합니다.
 
@@ -56,10 +65,11 @@ Tarot card design for '{English Name}' ({Korean Name}). Keywords: {Keywords}. Me
 
 ---
 
-## 5. Agent Behavior Checklist
+## 6. Agent Behavior Checklist
 
 이미지를 생성하기 전 스스로 다음을 체크하십시오:
 
 1.  [ ] **스타일 토큰 확인**: `Mystical, fantasy...` 문자열이 프롬프트 끝에 정확히 포함되었는가?
-2.  **형식 확인**: `Tarot card design for...` 로 시작하는 표준 템플릿을 사용했는가?
-3.  **구체성 확인**: `Meaning` 부분이 AI가 그림으로 그릴 수 있도록 시각적으로 묘사되었는가?
+2.  [ ] **비율 키워드 확인**: `vertical aspect ratio`가 포함되어 있는가?
+3.  [ ] **형식 확인**: `Tarot card design for...` 로 시작하는 표준 템플릿을 사용했는가?
+4.  [ ] **구체성 확인**: `Meaning` 부분이 AI가 그림으로 그릴 수 있도록 시각적으로 묘사되었는가?
