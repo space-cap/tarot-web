@@ -9,7 +9,7 @@
 
 모든 카드 생성 요청 시, **`Art style` 파라미터는 아래의 문자열을 토씨 하나 틀리지 않고 그대로 사용**해야 합니다. 이것이 전체 덱의 시각적 일관성(Visual Consistency)을 보장하는 핵심입니다.
 
-> **`Mystical, fantasy, high detailed, Rider-Waite Smith inspired, digital art, 8k resolution, vertical aspect ratio (9:16)`**
+> **`Art style: Mystical fantasy, high detail, Rider–Waite–Smith inspired (bold linework, clear symbolic storytelling), digital illustration.`**
 
 *   **변경 금지**: 순서를 바꾸거나, 단어를 추가/삭제하지 마십시오.
 *   **추가 금지**: "Watercolor", "Oil painting", "Realistic" 등의 다른 스타일 수식어를 절대 섞지 마십시오.
@@ -36,8 +36,13 @@
 **Meaning 부분에 텍스트 배치에 대한 지시사항을 반드시 포함해야 합니다.**
 
 ```markdown
-Tarot card design for '{English Name}'. Keywords: {Keywords}. Meaning: {Visual Meaning Description}. Text layout: Number '{Number}' on top, Name '{English Name}' on bottom. Art style: Mystical, fantasy, high detailed, Rider-Waite Smith inspired, digital art, 8k resolution, vertical aspect ratio (9:16), full frame design.
-Constraint: Main character must appear ONLY ONCE in the center. Background must be abstract pattern or simple texture. NO ghosting, NO repeated faces in background, clean decorative border.
+Tarot card design for “{English Name}”. Keywords: {Keywords}. Visual meaning: {Visual Meaning Description}.
+Art style: Mystical fantasy, high detail, Rider–Waite–Smith inspired (bold linework, clear symbolic storytelling), digital illustration.
+​Composition: Narrative scene (multiple characters allowed), with one primary focal figure in the center; keep the scene balanced and readable, no crowds.
+​Background: Simple symbolic setting with minimal landscape/architecture, or subtle abstract/paper texture; keep it uncluttered and not photorealistic.
+​Frame: Clean decorative tarot border, full-frame card design.
+​Text layout: Number “{Number}” on top, Name “{English Name}” on bottom, centered, engraved/serif feeling, high legibility.
+​Format: Vertical aspect ratio 9:16.
 ```
 
 *   **{English Name}**: 카드의 영문명 (예: The Sun)
