@@ -9,7 +9,7 @@
 
 모든 카드 생성 요청 시, **`Art style` 파라미터는 아래의 문자열을 토씨 하나 틀리지 않고 그대로 사용**해야 합니다. 이것이 전체 덱의 시각적 일관성(Visual Consistency)을 보장하는 핵심입니다.
 
-> **`Mystical, fantasy, high detailed, Rider-Waite Smith inspired, digital art, 8k resolution, vertical aspect ratio`**
+> **`Mystical, fantasy, high detailed, Rider-Waite Smith inspired, digital art, 8k resolution, vertical aspect ratio (9:16)`**
 
 *   **변경 금지**: 순서를 바꾸거나, 단어를 추가/삭제하지 마십시오.
 *   **추가 금지**: "Watercolor", "Oil painting", "Realistic" 등의 다른 스타일 수식어를 절대 섞지 마십시오.
@@ -21,7 +21,7 @@
 `generate_image` 툴의 `Prompt` 인자를 작성할 때 다음 포맷을 사용하십시오.
 
 ```markdown
-Tarot card design for '{English Name}' ({Korean Name}). Keywords: {Keywords}. Meaning: {Visual Meaning Description}. Art style: Mystical, fantasy, high detailed, Rider-Waite Smith inspired, digital art, 8k resolution, vertical aspect ratio.
+Tarot card design for '{English Name}' ({Korean Name}). Keywords: {Keywords}. Meaning: {Visual Meaning Description}. Art style: Mystical, fantasy, high detailed, Rider-Waite Smith inspired, digital art, 8k resolution, vertical aspect ratio (9:16).
 ```
 
 *   **{English Name}**: 카드의 영문명 (예: The Sun)
@@ -35,9 +35,9 @@ Tarot card design for '{English Name}' ({Korean Name}). Keywords: {Keywords}. Me
 
 ## 3. Output Format & Aspect Ratio (출력 형식)
 
-타로 카드는 반드시 **세로형(Vertical/Portrait)**이어야 합니다.
+타로 카드는 반드시 **세로형(Vertical/Portrait)**이어야 하며, 구체적으로 **9:16 비율**을 지향합니다.
 
-*   제공된 `generate_image` 툴이 비율(Aspect Ratio) 설정 파라미터를 지원하지 않으므로, 프롬프트 내의 **`vertical aspect ratio`** 키워드가 누락되지 않도록 특히 주의하십시오.
+*   제공된 `generate_image` 툴이 비율(Aspect Ratio) 설정 파라미터를 지원하지 않으므로, 프롬프트 내의 **`vertical aspect ratio (9:16)`** 키워드가 누락되지 않도록 특히 주의하십시오.
 *   정사각형(1:1)이나 가로형(Landscape) 이미지가 생성되지 않도록 프롬프트 앞부분에 `Tarot card design`이라는 맥락을 명확히 명시해야 합니다.
 
 ---
@@ -69,7 +69,7 @@ Tarot card design for '{English Name}' ({Korean Name}). Keywords: {Keywords}. Me
 
 이미지를 생성하기 전 스스로 다음을 체크하십시오:
 
-1.  [ ] **스타일 토큰 확인**: `Mystical, fantasy...` 문자열이 프롬프트 끝에 정확히 포함되었는가?
-2.  [ ] **비율 키워드 확인**: `vertical aspect ratio`가 포함되어 있는가?
+1.  [ ] **스타일 토큰 확인**: `vertical aspect ratio (9:16)`을 포함한 전체 문자열이 정확한가?
+2.  [ ] **비율 키워드 확인**: `(9:16)` 수치가 명시되었는가?
 3.  [ ] **형식 확인**: `Tarot card design for...` 로 시작하는 표준 템플릿을 사용했는가?
 4.  [ ] **구체성 확인**: `Meaning` 부분이 AI가 그림으로 그릴 수 있도록 시각적으로 묘사되었는가?
