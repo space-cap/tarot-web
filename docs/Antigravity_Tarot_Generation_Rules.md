@@ -9,7 +9,7 @@
 
 모든 카드 생성 요청 시, **`Art style` 파라미터는 아래의 문자열을 토씨 하나 틀리지 않고 그대로 사용**해야 합니다. 이것이 전체 덱의 시각적 일관성(Visual Consistency)을 보장하는 핵심입니다.
 
-> **`Art style: Mystical occult fantasy tarot illustration, ultra-detailed, Rider–Waite–Smith inspired iconography (bold consistent linework, detailed illustrative shading, clear readable symbolic storytelling), rich deep color palette, vintage parchment texture, digital illustration.`**
+> **`Art style: Classic Rider-Waite-Smith style tarot illustration. Bold black outlines, rich flat colors, subtle vintage paper texture.`**
 
 *   **변경 금지**: 순서를 바꾸거나, 단어를 추가/삭제하지 마십시오.
 *   **추가 금지**: "Watercolor", "Oil painting", "Realistic" 등의 다른 스타일 수식어를 절대 섞지 마십시오.
@@ -36,13 +36,13 @@
 **Meaning 부분에 텍스트 배치에 대한 지시사항을 반드시 포함해야 합니다.**
 
 ```markdown
-Tarot card design for “{English Name}”. Keywords: {Keywords}. Visual meaning: {Visual Meaning Description}.
-Art style: Mystical occult fantasy tarot illustration, ultra-detailed, Rider–Waite–Smith inspired iconography (bold consistent linework, detailed illustrative shading, clear readable symbolic storytelling), rich deep color palette, vintage parchment texture, digital illustration.
-​Composition: Narrative scene (multiple characters allowed), with one primary focal figure in the center; keep the scene balanced and readable.
-​Background: Atmospheric setting with subtle mystical symbols or nature elements, soft textured background (not solid black); keep it uncluttered but visually interesting.
-​Frame: Clean decorative tarot border, full-frame card design.
-​Text layout: Number “{Number}” on top, Name “{English Name}” on bottom, centered, engraved/serif feeling, high legibility.
-​Format: Vertical aspect ratio 9:16.
+Tarot card design for “{English Name}”.
+Visual meaning: {Visual Meaning Description}.
+Art style: Classic Rider-Waite-Smith style tarot illustration. Bold black outlines, rich flat colors, subtle vintage paper texture.
+Composition: Single central focus, clear symbolic storytelling, no clutter.
+Frame: Decorative tarot border.
+Text layout: Roman number “{Number}” on top, English name “{English Name}” on bottom.
+Aspect Ratio: Vertical 9:16.
 ```
 
 *   **{English Name}**: 카드의 영문명 (예: The Sun)
