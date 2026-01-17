@@ -171,8 +171,234 @@ export const tarotData = [
         id: 21,
         name_en: "The World",
         name_ko: "세계",
-        image: "/src/assets/cards/major_21_world.png", // Image pending
+        image: "/src/assets/cards/major_21_world.png",
         keywords: ["완성", "성취", "통합", "해피엔딩"],
         desc: "하나의 여정이 성공적으로 마무리되고, 새로운 세상이 열립니다."
+    },
+    // Minor Arcana - Wands
+    {
+        id: 22,
+        name_en: "Ace of Wands",
+        name_ko: "완드 에이스",
+        image: "/src/assets/cards/minor_wands_01_ace.png",
+        keywords: ["영감", "새로운 시작", "창조력", "열정"],
+        desc: "새로운 기회와 영감이 솟아납니다. 창조적인 에너지를 발산하세요."
+    },
+    {
+        id: 23,
+        name_en: "Two of Wands",
+        name_ko: "완드 2",
+        image: "/src/assets/cards/minor_wands_02.png",
+        keywords: ["계획", "발견", "미래", "결정"],
+        desc: "더 넓은 세상을 바라보며 미래를 계획하는 단계입니다."
+    },
+    {
+        id: 24,
+        name_en: "Three of Wands",
+        name_ko: "완드 3",
+        image: "/src/assets/cards/minor_wands_03.png",
+        keywords: ["확장", "전망", "해외", "성장"],
+        desc: "노력이 결실을 맺기 시작합니다. 더 큰 무대로 나아갈 준비를 하세요."
+    },
+    {
+        id: 25,
+        name_en: "Four of Wands",
+        name_ko: "완드 4",
+        image: "/src/assets/cards/minor_wands_04.png",
+        keywords: ["축하", "기쁨", "귀환", "안정"],
+        desc: "목표 달성을 축하하고 평화로운 휴식을 즐길 때입니다."
+    },
+    {
+        id: 26,
+        name_en: "Five of Wands",
+        name_ko: "완드 5",
+        image: "/src/assets/cards/minor_wands_05.png",
+        keywords: ["경쟁", "갈등", "불일치", "도전"],
+        desc: "주변과의 경쟁이나 갈등이 있을 수 있습니다. 건설적으로 해결하세요."
+    },
+    {
+        id: 27,
+        name_en: "Six of Wands",
+        name_ko: "완드 6",
+        image: "/src/assets/cards/minor_wands_06.png",
+        keywords: ["승리", "인정", "자신감", "성공"],
+        desc: "어려움을 극복하고 승리했습니다. 주변의 인정과 축하를 받으세요."
+    },
+    {
+        id: 28,
+        name_en: "Seven of Wands",
+        name_ko: "완드 7",
+        image: "/src/assets/cards/minor_wands_07.png",
+        keywords: ["방어", "용기", "신념", "저항"],
+        desc: "당신의 위치를 지키기 위해 용기가 필요합니다. 신념을 굽히지 마세요."
+    },
+    {
+        id: 29,
+        name_en: "Eight of Wands",
+        name_ko: "완드 8",
+        image: "/src/assets/cards/minor_wands_08.png",
+        keywords: ["신속", "행동", "이동", "진행"],
+        desc: "일이 빠르게 진행됩니다. 흐름을 타고 신속하게 행동하세요."
+    },
+    {
+        id: 30,
+        name_en: "Nine of Wands",
+        name_ko: "완드 9",
+        image: "/src/assets/cards/minor_wands_09.png",
+        keywords: ["끈기", "방어", "지침", "마지막 저항"],
+        desc: "지쳐있지만 포기하지 마세요. 마지막 고비가 남았습니다."
+    },
+    {
+        id: 31,
+        name_en: "Ten of Wands",
+        name_ko: "완드 10",
+        image: "/src/assets/cards/minor_wands_10.png",
+        keywords: ["부담", "책임", "압박", "과로"],
+        desc: "너무 많은 짐을 지고 있습니다. 책임감을 조금 내려놓으세요."
+    },
+    {
+        id: 32,
+        name_en: "Page of Wands",
+        name_ko: "완드 시종",
+        image: "/src/assets/cards/minor_wands_11_page.png",
+        keywords: ["탐험", "호기심", "새로운 소식", "열정"],
+        desc: "새로운 소식이나 아이디어가 찾아옵니다. 호기심을 가지고 탐구하세요."
+    },
+    {
+        id: 33,
+        name_en: "Knight of Wands",
+        name_ko: "완드 기사",
+        image: "/src/assets/cards/minor_wands_12_knight.png",
+        keywords: ["행동", "모험", "충동", "여행"],
+        desc: "열정을 가지고 목표를 향해 달려가세요. 단, 무모함은 주의해야 합니다."
+    },
+    {
+        id: 34,
+        name_en: "Queen of Wands",
+        name_ko: "완드 여왕",
+        image: "/src/assets/cards/minor_wands_13_queen.png",
+        keywords: ["매력", "자신감", "독립", "활력"],
+        desc: "당당하고 매력적인 에너지가 넘칩니다. 당신의 능력을 믿으세요."
+    },
+    {
+        id: 35,
+        name_en: "King of Wands",
+        name_ko: "완드 왕",
+        image: "/src/assets/cards/minor_wands_14_king.png",
+        keywords: ["리더십", "비전", "창조", "권위"],
+        desc: "큰 그림을 그리며 사람들을 이끄는 리더십을 발휘할 때입니다."
+    },
+    // Minor Arcana - Cups
+    {
+        id: 36,
+        name_en: "Ace of Cups",
+        name_ko: "컵 에이스",
+        image: "/src/assets/cards/minor_cups_01_ace.png",
+        keywords: ["사랑", "감정", "새로운 관계", "직관"],
+        desc: "마음이 열리고 새로운 사랑이나 감정이 시작됩니다."
+    },
+    {
+        id: 37,
+        name_en: "Two of Cups",
+        name_ko: "컵 2",
+        image: "/src/assets/cards/minor_cups_02.png",
+        keywords: ["결합", "파트너십", "조화", "매력"],
+        desc: "서로 주파수가 맞는 사람과의 깊은 교감이나 협력이 이루어집니다."
+    },
+    {
+        id: 38,
+        name_en: "Three of Cups",
+        name_ko: "컵 3",
+        image: "/src/assets/cards/minor_cups_03.png",
+        keywords: ["축하", "우정", "커뮤니티", "즐거움"],
+        desc: "좋은 사람들과 함께 즐거운 시간을 보내며 기쁨을 나누세요."
+    },
+    {
+        id: 39,
+        name_en: "Four of Cups",
+        name_ko: "컵 4",
+        image: "/src/assets/cards/minor_cups_04.png",
+        keywords: ["무관심", "권태", "재고", "고립"],
+        desc: "눈앞의 기회를 보지 못하고 있지는 않나요? 마음을 열어보세요."
+    },
+    {
+        id: 40,
+        name_en: "Five of Cups",
+        name_ko: "컵 5",
+        image: "/src/assets/cards/minor_cups_05.png",
+        keywords: ["상실", "후회", "실망", "슬픔"],
+        desc: "엎질러진 물을 보며 슬퍼하기보다, 아직 남은 희망을 바라보세요."
+    },
+    {
+        id: 41,
+        name_en: "Six of Cups",
+        name_ko: "컵 6",
+        image: "/src/assets/cards/minor_cups_06.png",
+        keywords: ["추억", "순수", "과거", "향수"],
+        desc: "아름다운 과거의 추억이나 어린 시절의 마음에 위안을 얻으세요."
+    },
+    {
+        id: 42,
+        name_en: "Seven of Cups",
+        name_ko: "컵 7",
+        image: "/src/assets/cards/minor_cups_07.png",
+        keywords: ["환상", "선택", "혼란", "꿈"],
+        desc: "너무 많은 선택지와 환상 속에서 현실적인 판단이 필요합니다."
+    },
+    {
+        id: 43,
+        name_en: "Eight of Cups",
+        name_ko: "컵 8",
+        image: "/src/assets/cards/minor_cups_08.png",
+        keywords: ["떠남", "포기", "여행", "실망"],
+        desc: "더 깊은 의미를 찾기 위해 현재의 안정적인 상황을 떠날 때입니다."
+    },
+    {
+        id: 44,
+        name_en: "Nine of Cups",
+        name_ko: "컵 9",
+        image: "/src/assets/cards/minor_cups_09.png",
+        keywords: ["만족", "소원 성취", "행복", "풍요"],
+        desc: "바라던 소원이 이루어지고 감정적으로 충만한 상태입니다."
+    },
+    {
+        id: 45,
+        name_en: "Ten of Cups",
+        name_ko: "컵 10",
+        image: "/src/assets/cards/minor_cups_10.png",
+        keywords: ["행복한 가정", "완성", "평화", "조화"],
+        desc: "가족이나 가까운 사람들과의 관계에서 완전한 행복을 느낍니다."
+    },
+    {
+        id: 46,
+        name_en: "Page of Cups",
+        name_ko: "컵 시종",
+        image: "/src/assets/cards/minor_cups_11_page.png",
+        keywords: ["메시지", "창의성", "호기심", "감성"],
+        desc: "새로운 감정적 메시지나 창의적인 영감이 찾아옵니다."
+    },
+    {
+        id: 47,
+        name_en: "Knight of Cups",
+        name_ko: "컵 기사",
+        image: "/src/assets/cards/minor_cups_12_knight.png",
+        keywords: ["로맨스", "제안", "이상주의", "매력"],
+        desc: "로맨틱한 제안이나 감정적인 이슈가 다가오고 있습니다."
+    },
+    {
+        id: 48,
+        name_en: "Queen of Cups",
+        name_ko: "컵 여왕",
+        image: "/src/assets/cards/minor_cups_13_queen.png",
+        keywords: ["자애", "직관", "공감", "치유"],
+        desc: "타인의 감정을 이해하고 보듬어주는 따뜻한 마음이 필요합니다."
+    },
+    {
+        id: 49,
+        name_en: "King of Cups",
+        name_ko: "컵 왕",
+        image: "/src/assets/cards/minor_cups_14_king.png",
+        keywords: ["감정 조절", "관대", "조언", "균형"],
+        desc: "감정을 성숙하게 다루며 주변에 지혜로운 조언을 줄 수 있습니다."
     }
 ];
