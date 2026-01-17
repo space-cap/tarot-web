@@ -400,5 +400,118 @@ export const tarotData = [
         image: "/src/assets/cards/minor_cups_14_king.png",
         keywords: ["감정 조절", "관대", "조언", "균형"],
         desc: "감정을 성숙하게 다루며 주변에 지혜로운 조언을 줄 수 있습니다."
+    },
+    // Minor Arcana - Swords
+    {
+        id: 50,
+        name_en: "Ace of Swords",
+        name_ko: "검 에이스",
+        image: "/src/assets/cards/minor_swords_01_ace.png",
+        keywords: ["승리", "진실", "명확성", "새로운 생각"],
+        desc: "새로운 아이디어나 깨달음이 찾아오며, 진실을 마주할 힘이 생깁니다."
+    },
+    {
+        id: 51,
+        name_en: "Two of Swords",
+        name_ko: "검 2",
+        image: "/src/assets/cards/minor_swords_02.png",
+        keywords: ["균형", "선택 보류", "교착 상태", "회피"],
+        desc: "어려운 결정 앞에서 눈을 가리고 있진 않나요? 결단을 내릴 때입니다."
+    },
+    {
+        id: 52,
+        name_en: "Three of Swords",
+        name_ko: "검 3",
+        image: "/src/assets/cards/minor_swords_03.png",
+        keywords: ["상처", "슬픔", "이별", "고통"],
+        desc: "마음의 상처나 슬픔이 찾아올 수 있지만, 이를 통해 성장할 수 있습니다."
+    },
+    {
+        id: 53,
+        name_en: "Four of Swords",
+        name_ko: "검 4",
+        image: "/src/assets/cards/minor_swords_04.png",
+        keywords: ["휴식", "회복", "명상", "일시 정지"],
+        desc: "지친 몸과 마음을 쉬게 하고 재충전할 시간이 필요합니다."
+    },
+    {
+        id: 54,
+        name_en: "Five of Swords",
+        name_ko: "검 5",
+        image: "/src/assets/cards/minor_swords_05.png",
+        keywords: ["패배", "갈등", "배신", "상실"],
+        desc: "이기적인 승리보다는 화해나 물러섬이 더 중요할 수 있습니다."
+    },
+    {
+        id: 55,
+        name_en: "Six of Swords",
+        name_ko: "검 6",
+        image: "/src/assets/cards/minor_swords_06.png",
+        keywords: ["이동", "전환", "회복", "여행"],
+        desc: "어려운 상황을 뒤로하고 더 나은 곳으로 이동하거나 나아가고 있습니다."
+    },
+    {
+        id: 56,
+        name_en: "Seven of Swords",
+        name_ko: "검 7",
+        image: "/src/assets/cards/minor_swords_07.png",
+        keywords: ["전략", "속임수", "비밀", "회피"],
+        desc: "정직하지 못한 방법이나 꼼수를 쓰고 있지는 않은지 돌아보세요."
+    },
+    {
+        id: 57,
+        name_en: "Eight of Swords",
+        name_ko: "검 8",
+        image: "/src/assets/cards/minor_swords_08.png",
+        keywords: ["구속", "두려움", "무력감", "갇힘"],
+        desc: "스스로 만든 두려움이나 생각에 갇혀 있지 않나요? 눈을 뜨면 나갈 수 있습니다."
+    },
+    {
+        id: 58,
+        name_en: "Nine of Swords",
+        name_ko: "검 9",
+        image: "/src/assets/cards/minor_swords_09.png",
+        keywords: ["불안", "악몽", "걱정", "죄책감"],
+        desc: "지나친 걱정과 불안으로 밤잠을 설치고 있습니다. 마음을 편히 가지세요."
+    },
+    {
+        id: 59,
+        name_en: "Ten of Swords",
+        name_ko: "검 10",
+        image: "/src/assets/cards/minor_swords_10.png",
+        keywords: ["끝", "배신", "고통의 종결", "희생"],
+        desc: "고통스러운 상황이 드디어 끝났습니다. 이제 새로운 시작만 남았습니다."
+    },
+    {
+        id: 60,
+        name_en: "Page of Swords",
+        name_ko: "검 시종",
+        image: "/src/assets/cards/minor_swords_11_page.png",
+        keywords: ["호기심", "경계", "새로운 아이디어", "메시지"],
+        desc: "새로운 정보나 아이디어를 호기심 있게 탐구하거나 경계심을 갖습니다."
+    },
+    {
+        id: 61,
+        name_en: "Knight of Swords",
+        name_ko: "검 기사",
+        image: "/src/assets/cards/minor_swords_12_knight.png",
+        keywords: ["행동", "저돌적", "야망", "급함"],
+        desc: "목표를 향해 거침없이 돌진하지만, 너무 성급하지 않도록 주의하세요."
+    },
+    {
+        id: 62,
+        name_en: "Queen of Swords",
+        name_ko: "검 여왕",
+        image: "/src/assets/cards/minor_swords_13_queen.png",
+        keywords: ["독립심", "명확한 판단", "직설적", "지성"],
+        desc: "감정에 치우치지 않고 냉철하고 명확하게 상황을 판단합니다."
+    },
+    {
+        id: 63,
+        name_en: "King of Swords",
+        name_ko: "검 왕",
+        image: "/src/assets/cards/minor_swords_14_king.png",
+        keywords: ["권위", "진실", "지적 능력", "공정함"],
+        desc: "높은 지적 능력과 공정한 판단력으로 상황을 통제하고 다스립니다."
     }
 ];
