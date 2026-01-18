@@ -1,0 +1,169 @@
+/* Oracle.css */
+.oracle-btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.oracle-trigger-btn {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #2E004F;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.oracle-trigger-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+}
+
+.oracle-trigger-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.oracle-result-container {
+    background: rgba(20, 0, 36, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.oracle-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    padding-bottom: 1rem;
+}
+
+.oracle-title {
+    font-family: 'Cinzel', serif;
+    color: #FFD700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.oracle-mantra {
+    font-size: 1.2rem;
+    color: #E6E6FA;
+    font-style: italic;
+    font-family: 'Pretendard', serif;
+}
+
+.oracle-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .oracle-content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.reading-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.reading-label {
+    color: #FFD700;
+    font-size: 1.3rem;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.oracle-text-box {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 8px;
+    padding: 1.5rem;
+    color: #E6E6FA;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    /* Preserves newlines and spacing */
+    font-family: 'Pretendard', sans-serif;
+    /* Clean font for readability */
+    height: 400px;
+    /* Fixed height for scrollable box feeling */
+    overflow-y: auto;
+    /* Scroll if content is long */
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Scrollbar for the text box */
+.oracle-text-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.oracle-text-box::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.oracle-text-box::-webkit-scrollbar-thumb {
+    background: rgba(255, 215, 0, 0.3);
+    border-radius: 4px;
+}
+
+.oracle-text-box::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 215, 0, 0.5);
+}
+
+.scores-section {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.score-item {
+    margin-bottom: 1.2rem;
+}
+
+.score-label {
+    display: flex;
+    justify-content: space-between;
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.score-bar-bg {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.score-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    border-radius: 5px;
+    transition: width 1.5s ease-out;
+}

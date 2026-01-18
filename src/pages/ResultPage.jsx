@@ -1,10 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Share2, RotateCcw } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Share2, RotateCcw, Sparkles } from 'lucide-react';
 import Header from '../components/common/Header';
 import styles from './ResultPage.module.css';
+import '../styles/TarotGuide.css';
+import '../styles/Oracle.css';
 import cardBackImage from '../assets/cards/tarot_card_back.png';
+import { aiService } from '../services/aiService';
+import ApiKeyModal from '../components/common/ApiKeyModal';
 
 const SPREAD_LABELS = [
     { title: "현재의 상황", sub: "Present Situation" },
@@ -16,6 +20,46 @@ const ResultPage = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const { selectedCards, question } = location.state || {};
+
+    // AI State
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [aiResult, setAiResult] = useState(null);
+
+    const handleAskOracle = () => {
+        const apiKey = localStorage.getItem('openai_api_key');
+        if (!apiKey) {
+            setIsModalOpen(true);
+            return;
+        }
+        fetchOracleReading(apiKey);
+    };
+
+    const fetchOracleReading = async (apiKey) => {
+        setIsLoading(true);
+        try {
+            const result = await aiService.generateTarotReading(
+                selectedCards,
+                question || "General Fortune",
+                apiKey
+            );
+            setAiResult(result);
+        } catch (error) {
+            if (error.message === "INVALID_KEY") {
+                alert("API Key is invalid.");
+                setIsModalOpen(true);
+            } else {
+                console.error(error);
+                alert("The Oracle is silent right now. Please try again.");
+            }
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const handleKeySave = (newKey) => {
+        fetchOracleReading(newKey);
+    };
 
     useEffect(() => {
         if (!selectedCards || selectedCards.length === 0) {
@@ -109,6 +153,79 @@ const ResultPage = () => {
                     ))}
                 </div>
 
+                {/* AI Oracle Section */}
+                {!aiResult && (
+                    <motion.div
+                        className="oracle-btn-container"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 1.5 }}
+                    >
+                        <button
+                            className="oracle-trigger-btn"
+                            onClick={handleAskOracle}
+                            disabled={isLoading}
+                        >
+                            <Sparkles size={24} />
+                            {isLoading ? "운명을 읽는 중..." : "AI 점술가에게 더 깊은 해석 듣기"}
+                        </button>
+                    </motion.div>
+                )}
+
+                <AnimatePresence>
+                    {aiResult && (
+                        <motion.div
+                            className="oracle-result-container"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <div className="oracle-header">
+                                <h3 className="oracle-title"><Sparkles /> The Mystic Oracle</h3>
+                                <p className="oracle-mantra">"{aiResult.mantra}"</p>
+                            </div>
+
+                            <div className="oracle-content-grid">
+                                <div className="reading-section">
+                                    <h4 className="reading-label">🔮 Grand Master's Insight</h4>
+                                    <div className="oracle-full-reading">
+                                        {aiResult.full_reading.split('\\n').map((paragraph, idx) => (
+                                            <p key={idx} dangerouslySetInnerHTML={{
+                                                __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                                            }} />
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="scores-section">
+                                    <h4 style={{ color: '#FFD700', marginBottom: '1.5rem', textAlign: 'center' }}>운세 스코어 (Lucky Scores)</h4>
+                                    {[
+                                        { key: 'money', label: '금전운' },
+                                        { key: 'love', label: '애정운' },
+                                        { key: 'health', label: '건강운' },
+                                        { key: 'work', label: '사업/학업' }
+                                    ].map(score => (
+                                        <div key={score.key} className="score-item">
+                                            <div className="score-label">
+                                                <span>{score.label}</span>
+                                                <span>{aiResult.scores[score.key]}%</span>
+                                            </div>
+                                            <div className="score-bar-bg">
+                                                <motion.div
+                                                    className="score-bar-fill"
+                                                    initial={{ width: 0 }}
+                                                    animate={{ width: `${aiResult.scores[score.key]}%` }}
+                                                    transition={{ duration: 1, delay: 0.5 }}
+                                                />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
                 <motion.div
                     className={styles.actions}
                     initial={{ opacity: 0 }}
@@ -122,6 +239,13 @@ const ResultPage = () => {
                         <Share2 size={18} /> 공유하기
                     </button>
                 </motion.div>
+
+                {/* API Key Modal */}
+                <ApiKeyModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    onSave={handleKeySave}
+                />
             </main>
         </div>
     );
