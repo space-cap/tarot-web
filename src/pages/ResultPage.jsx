@@ -188,12 +188,8 @@ const ResultPage = () => {
                             <div className="oracle-content-grid">
                                 <div className="reading-section">
                                     <h4 className="reading-label">🔮 Grand Master's Insight</h4>
-                                    <div className="oracle-full-reading">
-                                        {aiResult.full_reading.split('\\n').map((paragraph, idx) => (
-                                            <p key={idx} dangerouslySetInnerHTML={{
-                                                __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                                            }} />
-                                        ))}
+                                    <div className="oracle-text-box">
+                                        {aiResult.full_reading}
                                     </div>
                                 </div>
 
@@ -220,6 +216,14 @@ const ResultPage = () => {
                                             </div>
                                         </div>
                                     ))}
+                                </div>
+
+                                {/* Debug Prompt Section */}
+                                <div className="prompt-section" style={{ marginTop: '2rem', borderTop: '1px solid rgba(255,215,0,0.1)', paddingTop: '1rem' }}>
+                                    <h4 className="reading-label" style={{ fontSize: '1rem', color: '#aaa' }}>📜 Prompt Used (Debug)</h4>
+                                    <div className="oracle-prompt-box">
+                                        {aiResult.debug_prompt}
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

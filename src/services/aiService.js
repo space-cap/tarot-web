@@ -133,7 +133,8 @@ IMPORTANT: Return ONLY the JSON.Do not use markdown backticks.
             const jsonMatch = content.match(/\{[\s\S]*\}/);
             const jsonString = jsonMatch ? jsonMatch[0] : content;
 
-            return JSON.parse(jsonString);
+            const parsedResult = JSON.parse(jsonString);
+            return { ...parsedResult, debug_prompt: prompt };
         } catch (error) {
             console.error("AI Readings Error:", error);
             throw error;
