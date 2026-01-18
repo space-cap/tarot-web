@@ -1,9 +1,8 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { tarotData } from '../../../data/tarotData';
 
 // Placeholder images - in a real scenario, these would be the generated assets
-// Using card back as placeholder for now
 import cardBackImage from '../../../assets/cards/tarot_card_back.png';
 
 const SectionWrapper = ({ children }) => (
@@ -18,77 +17,62 @@ const SectionWrapper = ({ children }) => (
     </motion.div>
 );
 
-const ParallaxHistorySection = () => {
-    const containerRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"]
-    });
-
-    const yStars1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
-    const yStars2 = useTransform(scrollYProgress, [0, 1], [0, -400]);
-
-    // Timeline Milestones
+const ElegantHistorySection = () => {
+    // Milestones Data - Expanded Content
     const milestones = [
         {
             year: "15th Century",
             title: "Visconti-Sforza & The Origins",
-            desc: "15세기 이탈리아의 귀족 사회에서 시작된 'Tionfi(승리)'. 이것은 단순한 카드 게임이었으나, 당시의 예술과 문화를 담아낸 정교한 그림들이 타로의 시초가 되었습니다.",
+            desc: "타로의 기원은 15세기 북부 이탈리아(밀라노, 페라라, 볼로냐)의 귀족 사회로 거슬러 올라갑니다. 당시에는 점술 도구가 아닌 '트리온피(Trionfi, 승리)'라고 불리는 카드 게임을 위해 만들어졌습니다.\n\n가장 대표적인 '비스콘티-스포르차(Visconti-Sforza)' 덱은 밀라노의 공작 가문을 위해 유명 화가들이 직접 손으로 그리고 금박을 입혀 제작했습니다. 이는 단순한 놀이 도구를 넘어 권력과 부를 상징하는 예술품이었습니다.\n\n초기의 타로는 4개의 슈트(지팡이, 컵, 검, 동전)와 당시 중세 기독교 사회의 중요한 덕목이나 인물을 상징하는 22장의 '으뜸패(Trump)'로 구성되어 있었으며, 이것이 오늘날 메이저 아르카나의 원형이 되었습니다.",
             imgPlaceholder: "Visconti Style"
         },
         {
             year: "18th Century",
-            title: "Tarot de Marseille",
-            desc: "프랑스 마르세유에서 정립된 타로의 체계. 신비주의와 결합하며 점술 도구로서의 정체성을 확립하기 시작했습니다. 목판화 스타일의 강렬한 이미지가 특징입니다.",
+            title: "Tarot de Marseille & Occultism",
+            desc: "18세기 프랑스, 특히 마르세유 지방은 타로 생산의 중심지가 되었습니다. 목판 인쇄 기술의 발달로 대량 생산이 가능해지면서 '마르세유 타로(Tarot de Marseille)'라는 표준화된 양식이 정립되었습니다. 선명한 원색(빨강, 파랑, 노랑)과 단순화된 화풍이 특징입니다.\n\n이 시기에 앙투안 쿠르 드 제블랭(Antoine Court de Gébelin)과 같은 프랑스 오컬트 학자들은 타로가 고대 이집트의 지혜를 담은 '토트의 서(Book of Thoth)'에서 유래했다고 주장했습니다. 이러한 신비주의적 해석이 더해지면서 타로는 단순한 게임을 넘어, 무의식과 영적 지혜를 탐구하는 점술의 도구로 재탄생하게 되었습니다.",
             imgPlaceholder: "Marseille Style"
         },
         {
             year: "1909",
-            title: "Rider-Waite-Smith",
-            desc: "아서 에드워드 웨이트와 파멜라 콜먼 스미스에 의해 탄생한 현대 타로의 표준. 마이너 아르카나까지 모두 그림으로 표현되어 누구나 직관적으로 해석할 수 있게 되었습니다.",
+            title: "Rider-Waite-Smith (RWS)",
+            desc: "1909년, 영국의 황금새벽회(Golden Dawn) 출신인 아서 에드워드 웨이트(A.E. Waite)와 파멜라 콜먼 스미스(Pamela Colman Smith)는 타로 역사에 혁명을 일으켰습니다.\n\n기존의 마르세유 타로는 마이너 아르카나(숫자 카드)가 단순히 기하학적 문양으로만 그려져 있어 초보자가 해석하기 어려웠습니다. 스미스는 모든 마이너 아르카나 카드에 풍부한 상징과 인물 묘사를 담아, 그림만 보고도 직관적으로 의미를 유추할 수 있게 만들었습니다.\n\n'라이더-웨이트' 덱은 현대 타로의 표준이 되었으며, 오늘날 존재하는 수많은 타로 덱들의 원형이자 교과서로 여겨지고 있습니다.",
             imgPlaceholder: "Rider-Waite Style"
         },
         {
             year: "2026",
-            title: "Digital Evolution",
-            desc: "그리고 2026년, 인공지능과 결합하여 당신의 운명을 비추는 'MYSTIC TAROT'으로 진화했습니다. 고대의 지혜는 디지털 세계에서 더욱 명확한 답을 제시합니다.",
+            title: "Digital Evolution: The Mystic",
+            desc: "수백 년간 종이 위에 머물렀던 타로는 21세기에 이르러 디지털 공간으로 확장되었습니다. 융(Carl Jung)의 '동시성 이론(Synchronicity)'—우연처럼 보이는 사건들 사이의 의미 있는 연결—은 디지털 알고리즘의 무작위성과 만나 새로운 차원의 리딩을 가능하게 합니다.\n\n우리는 고대의 상징 체계를 현대적인 기술로 계승합니다. 인공지능은 수만 가지의 해석 데이터를 학습하여 개인의 상황에 맞는 가장 적절한 통찰을 즉각적으로 제시합니다. 물리적 제약을 넘어 언제 어디서나 내면의 목소리에 귀를 기울일 수 있는 시대, 이것이 바로 타로의 새로운 진화입니다.",
             imgPlaceholder: "Tarot 2026 App"
         }
     ];
 
     return (
-        <div ref={containerRef} className="history-parallax-container">
-            {/* Background Stars Layer */}
-            <motion.div style={{ y: yStars1 }} className="parallax-bg-layer layer-1" />
-            <motion.div style={{ y: yStars2 }} className="parallax-bg-layer layer-2" />
+        <SectionWrapper>
+            <h2 className="section-title text-center" style={{ marginBottom: '4rem' }}>The Journey of Tarot</h2>
 
-            <h2 className="section-title text-center">The Journey of Tarot</h2>
-
-            <div className="timeline-container">
-                <div className="timeline-line" />
-
+            <div className="elegant-history-container">
                 {milestones.map((item, index) => (
                     <motion.div
                         key={index}
-                        className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
-                        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        className={`elegant-item ${index % 2 === 0 ? 'normal' : 'reverse'}`}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        viewport={{ once: true, margin: "-50px" }}
                     >
-                        <div className="timeline-content">
-                            <div className="timeline-year">{item.year}</div>
-                            <h3 className="timeline-title">{item.title}</h3>
-                            <div className="timeline-image-wrapper">
-                                {/* Using cardBackImage as placeholder until generation works */}
-                                <img src={cardBackImage} alt={item.title} className="timeline-img" />
-                            </div>
-                            <p className="timeline-desc">{item.desc}</p>
+                        <div className="elegant-image-box">
+                            <img src={cardBackImage} alt={item.title} className="elegant-img" />
+                            <div className="elegant-year-badge">{item.year}</div>
+                        </div>
+
+                        <div className="elegant-content-box">
+                            <h3 className="elegant-title">{item.title}</h3>
+                            <p className="elegant-desc">{item.desc}</p>
                         </div>
                     </motion.div>
                 ))}
             </div>
-        </div>
+        </SectionWrapper>
     );
 };
 
@@ -171,7 +155,7 @@ const UsageSection = () => (
 
 const GuideSections = ({ activeTab }) => {
     switch (activeTab) {
-        case 'history': return <ParallaxHistorySection />;
+        case 'history': return <ElegantHistorySection />;
         case 'structure': return <StructureSection />;
         case 'how-to-read': return <UsageSection />;
         default: return null;
