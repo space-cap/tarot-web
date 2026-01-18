@@ -1,6 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { tarotData } from '../../../data/tarotData';
+
+// Placeholder images - in a real scenario, these would be the generated assets
+// Using card back as placeholder for now
+import cardBackImage from '../../../assets/cards/tarot_card_back.png';
 
 const SectionWrapper = ({ children }) => (
     <motion.div
@@ -14,25 +18,79 @@ const SectionWrapper = ({ children }) => (
     </motion.div>
 );
 
-const HistorySection = () => (
-    <SectionWrapper>
-        <h2 className="section-title">The Origins of Tarot</h2>
-        <p className="section-text">
-            타로 카드의 기원은 15세기 이탈리아의 귀족 사회로 거슬러 올라갑니다.
-            처음에는 'Tionfi(승리)'라는 이름의 카드 게임으로 시작되었으나,
-            시간이 흐르며 단순한 놀이를 넘어 신비주의와 점술의 도구로 발전했습니다.
-        </p>
-        <p className="section-text">
-            특히 18세기 프랑스에서 마르세유 타로가 정립되면서 본격적인 점술 도구로 자리 잡았으며,
-            20세기 초 아서 에드워드 웨이트(A.E. Waite)와 파멜라 콜먼 스미스(Pamela Colman Smith)에 의해
-            제작된 '라이더-웨이트 덱'은 현대 타로의 표준이 되었습니다.
-        </p>
-        <p className="section-text">
-            타로는 단순한 미신이 아닌, 무의식을 투영하고
-            내면의 지혜를 발견하는 심리적 도구로서 오늘날까지 많은 사랑을 받고 있습니다.
-        </p>
-    </SectionWrapper>
-);
+const ParallaxHistorySection = () => {
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end start"]
+    });
+
+    const yStars1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
+    const yStars2 = useTransform(scrollYProgress, [0, 1], [0, -400]);
+
+    // Timeline Milestones
+    const milestones = [
+        {
+            year: "15th Century",
+            title: "Visconti-Sforza & The Origins",
+            desc: "15세기 이탈리아의 귀족 사회에서 시작된 'Tionfi(승리)'. 이것은 단순한 카드 게임이었으나, 당시의 예술과 문화를 담아낸 정교한 그림들이 타로의 시초가 되었습니다.",
+            imgPlaceholder: "Visconti Style"
+        },
+        {
+            year: "18th Century",
+            title: "Tarot de Marseille",
+            desc: "프랑스 마르세유에서 정립된 타로의 체계. 신비주의와 결합하며 점술 도구로서의 정체성을 확립하기 시작했습니다. 목판화 스타일의 강렬한 이미지가 특징입니다.",
+            imgPlaceholder: "Marseille Style"
+        },
+        {
+            year: "1909",
+            title: "Rider-Waite-Smith",
+            desc: "아서 에드워드 웨이트와 파멜라 콜먼 스미스에 의해 탄생한 현대 타로의 표준. 마이너 아르카나까지 모두 그림으로 표현되어 누구나 직관적으로 해석할 수 있게 되었습니다.",
+            imgPlaceholder: "Rider-Waite Style"
+        },
+        {
+            year: "2026",
+            title: "Digital Evolution",
+            desc: "그리고 2026년, 인공지능과 결합하여 당신의 운명을 비추는 'MYSTIC TAROT'으로 진화했습니다. 고대의 지혜는 디지털 세계에서 더욱 명확한 답을 제시합니다.",
+            imgPlaceholder: "Tarot 2026 App"
+        }
+    ];
+
+    return (
+        <div ref={containerRef} className="history-parallax-container">
+            {/* Background Stars Layer */}
+            <motion.div style={{ y: yStars1 }} className="parallax-bg-layer layer-1" />
+            <motion.div style={{ y: yStars2 }} className="parallax-bg-layer layer-2" />
+
+            <h2 className="section-title text-center">The Journey of Tarot</h2>
+
+            <div className="timeline-container">
+                <div className="timeline-line" />
+
+                {milestones.map((item, index) => (
+                    <motion.div
+                        key={index}
+                        className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
+                        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                    >
+                        <div className="timeline-content">
+                            <div className="timeline-year">{item.year}</div>
+                            <h3 className="timeline-title">{item.title}</h3>
+                            <div className="timeline-image-wrapper">
+                                {/* Using cardBackImage as placeholder until generation works */}
+                                <img src={cardBackImage} alt={item.title} className="timeline-img" />
+                            </div>
+                            <p className="timeline-desc">{item.desc}</p>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+        </div>
+    );
+};
 
 const StructureSection = () => {
     // Example cards for structure (Major: Fool(0), Minor: Ace of Wands(22), Cups(36), Swords(50), Pentacles(64))
@@ -113,7 +171,7 @@ const UsageSection = () => (
 
 const GuideSections = ({ activeTab }) => {
     switch (activeTab) {
-        case 'history': return <HistorySection />;
+        case 'history': return <ParallaxHistorySection />;
         case 'structure': return <StructureSection />;
         case 'how-to-read': return <UsageSection />;
         default: return null;
