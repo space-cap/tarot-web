@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Book } from 'lucide-react';
 import Header from '../components/common/Header';
 import styles from './IntroPage.module.css';
 import cardBackImage from '../assets/cards/tarot_card_back.png';
@@ -111,6 +112,30 @@ const IntroPage = () => {
                         transition={{ delay: 1 }}
                     >
                         운세 확인하기
+                    </motion.button>
+
+                    <motion.button
+                        className={styles.guideBtn}
+                        onClick={() => navigate('/guide')}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.8 }}
+                        transition={{ delay: 1.5, duration: 1 }}
+                        whileHover={{ scale: 1.1, opacity: 1, color: "#FFD700" }}
+                        style={{
+                            marginTop: '1.5rem',
+                            background: 'none',
+                            border: 'none',
+                            color: 'rgba(255, 255, 255, 0.6)',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            fontSize: '0.9rem',
+                            fontFamily: 'Cinzel, serif'
+                        }}
+                    >
+                        <Book size={18} />
+                        The Book of Mystery
                     </motion.button>
                 </motion.div>
             </main>

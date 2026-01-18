@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import IntroPage from './pages/IntroPage';
 import SelectionPage from './pages/SelectionPage';
 import ResultPage from './pages/ResultPage';
+import TarotGuide from './pages/TarotGuide';
 import { AudioProvider } from './context/AudioContext';
 import './App.css';
 
@@ -14,6 +15,7 @@ function App() {
             <Route path="/" element={<IntroPage />} />
             <Route path="/select" element={<SelectionPage />} />
             <Route path="/result" element={<ResultPage />} />
+            <Route path="/guide" element={<TarotGuide />} />
           </Routes>
         </div>
       </BrowserRouter>
