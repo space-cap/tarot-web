@@ -36,7 +36,7 @@
     - [x] Web Share API 연동.
 
 ## Phase 4: 고도화 및 배포 (Polish & Deploy)
-- [x] **이미지 에셋 적용**: 실제 고퀄리티 타로 카드 이미지 적용 (Major Arcana).
+- [x] **이미지 에셋 적용**: 실제 고퀄리티 타로 카드 이미지 적용 (Major & Minor Arcana 전체 78장).
 - [x] **사운드 효과**: 배경음악(Gymnopedie No 1) 및 On/Off 기능 추가.
 - [ ] **반응형 테스트**: 모바일/태블릿/데스크탑 뷰포트 점검 (진행 중).
 - [ ] **배포**: Vercel/Netlify 연동 및 배포.

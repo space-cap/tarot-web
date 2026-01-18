@@ -513,5 +513,118 @@ export const tarotData = [
         image: "/src/assets/cards/minor_swords_14_king.png",
         keywords: ["권위", "진실", "지적 능력", "공정함"],
         desc: "높은 지적 능력과 공정한 판단력으로 상황을 통제하고 다스립니다."
+    },
+    // Minor Arcana - Pentacles
+    {
+        id: 64,
+        name_en: "Ace of Pentacles",
+        name_ko: "펜타클 에이스",
+        image: "/src/assets/cards/minor_pentacles_01_ace.png",
+        keywords: ["부", "새로운 기회", "번영", "안정"],
+        desc: "물질적인 풍요와 새로운 기회가 찾아옵니다. 현실적인 성취의 시작입니다."
+    },
+    {
+        id: 65,
+        name_en: "Two of Pentacles",
+        name_ko: "펜타클 2",
+        image: "/src/assets/cards/minor_pentacles_02.png",
+        keywords: ["균형", "적응", "유연성", "우선순위"],
+        desc: "변화하는 상황 속에서 유연하게 대처하며 균형을 잡아야 합니다."
+    },
+    {
+        id: 66,
+        name_en: "Three of Pentacles",
+        name_ko: "펜타클 3",
+        image: "/src/assets/cards/minor_pentacles_03.png",
+        keywords: ["팀워크", "협력", "기술", "계획"],
+        desc: "다른 사람들과 협력하여 목표를 이루고, 당신의 능력을 인정받습니다."
+    },
+    {
+        id: 67,
+        name_en: "Four of Pentacles",
+        name_ko: "펜타클 4",
+        image: "/src/assets/cards/minor_pentacles_04.png",
+        keywords: ["소유욕", "통제", "안정", "집착"],
+        desc: "가진 것을 지키려다 고립될 수 있습니다. 조금 더 마음을 열어보세요."
+    },
+    {
+        id: 68,
+        name_en: "Five of Pentacles",
+        name_ko: "펜타클 5",
+        image: "/src/assets/cards/minor_pentacles_05.png",
+        keywords: ["빈곤", "소외", "어려움", "불안"],
+        desc: "경제적 또는 정서적으로 어려운 시기일 수 있지만, 도움의 손길은 가까이에 있습니다."
+    },
+    {
+        id: 69,
+        name_en: "Six of Pentacles",
+        name_ko: "펜타클 6",
+        image: "/src/assets/cards/minor_pentacles_06.png",
+        keywords: ["나눔", "관용", "자선", "균형"],
+        desc: "가진 것을 나누거나 도움을 받을 때입니다. 주고받는 것의 균형이 중요합니다."
+    },
+    {
+        id: 70,
+        name_en: "Seven of Pentacles",
+        name_ko: "펜타클 7",
+        image: "/src/assets/cards/minor_pentacles_07.png",
+        keywords: ["인내", "투자", "기다림", "수확"],
+        desc: "노력한 결과를 기다리는 시기입니다. 성급해하지 말고 꾸준히 나아가세요."
+    },
+    {
+        id: 71,
+        name_en: "Eight of Pentacles",
+        name_ko: "펜타클 8",
+        image: "/src/assets/cards/minor_pentacles_08.png",
+        keywords: ["장인 정신", "노력", "숙련", "디테일"],
+        desc: "꾸준한 노력과 집중을 통해 기술을 연마하고 목표를 달성해 나갑니다."
+    },
+    {
+        id: 72,
+        name_en: "Nine of Pentacles",
+        name_ko: "펜타클 9",
+        image: "/src/assets/cards/minor_pentacles_09.png",
+        keywords: ["풍요", "자립", "성취", "우아함"],
+        desc: "스스로 일궈낸 성취와 풍요로움을 즐기며 만족스러운 시간을 보냅니다."
+    },
+    {
+        id: 73,
+        name_en: "Ten of Pentacles",
+        name_ko: "펜타클 10",
+        image: "/src/assets/cards/minor_pentacles_10.png",
+        keywords: ["부", "가족", "유산", "장기적 성공"],
+        desc: "물질적인 풍요와 가족의 안정이 함께하는 완성된 상태를 의미합니다."
+    },
+    {
+        id: 74,
+        name_en: "Page of Pentacles",
+        name_ko: "펜타클 시종",
+        image: "/src/assets/cards/minor_pentacles_11_page.png",
+        keywords: ["새로운 기회", "학습", "실용성", "호기심"],
+        desc: "새로운 배움의 기회나 현실적인 목표가 생깁니다. 성실하게 시작해보세요."
+    },
+    {
+        id: 75,
+        name_en: "Knight of Pentacles",
+        name_ko: "펜타클 기사",
+        image: "/src/assets/cards/minor_pentacles_12_knight.png",
+        keywords: ["근면", "신뢰", "책임감", "보수적"],
+        desc: "느리지만 확실하게 목표를 향해 나아갑니다. 책임감 있고 성실한 태도가 필요합니다."
+    },
+    {
+        id: 76,
+        name_en: "Queen of Pentacles",
+        name_ko: "펜타클 여왕",
+        image: "/src/assets/cards/minor_pentacles_13_queen.png",
+        keywords: ["풍요", "양육", "실용적", "안정"],
+        desc: "따뜻하고 현실적인 마음으로 주변을 돌보며 풍요로움을 나눕니다."
+    },
+    {
+        id: 77,
+        name_en: "King of Pentacles",
+        name_ko: "펜타클 왕",
+        image: "/src/assets/cards/minor_pentacles_14_king.png",
+        keywords: ["부유함", "사업가", "안정", "성취"],
+        desc: "물질적인 성공과 안정을 이룬 상태로, 현실적인 리더십을 발휘합니다."
     }
 ];
