@@ -70,11 +70,10 @@ export const aiService = {
         ).join("\n");
 
         const prompt = `
-        const prompt = `
       You are a World - class Grand Tarot Master(Grand Master) conducting a private consultation.
       The user asked: "${question}".
       The cards drawn are:
-        ${ cardDescriptions }
+        ${cardDescriptions}
 
       ** Your Goal:** Provide a deeply personal, insightful, and unconstrained reading. 
       Do NOT start with "The cards are..." or generic intros.Start directly with the core message.
@@ -107,7 +106,7 @@ IMPORTANT: Return ONLY the JSON.Do not use markdown backticks.
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${ apiKey } `
+                    "Authorization": `Bearer ${apiKey} `
                 },
                 body: JSON.stringify({
                     model: "gpt-3.5-turbo",
@@ -123,7 +122,7 @@ IMPORTANT: Return ONLY the JSON.Do not use markdown backticks.
                 if (response.status === 401) throw new Error("INVALID_KEY");
                 const errData = await response.json().catch(() => ({}));
                 console.error("OpenAI API Error:", response.status, errData);
-                throw new Error(`API_ERROR: ${ response.status } `);
+                throw new Error(`API_ERROR: ${response.status} `);
             }
 
             const data = await response.json();
@@ -134,7 +133,7 @@ IMPORTANT: Return ONLY the JSON.Do not use markdown backticks.
             const jsonString = jsonMatch ? jsonMatch[0] : content;
 
             const parsedResult = JSON.parse(jsonString);
-            return { ...parsedResult, debug_prompt: prompt };
+            return { ...parsedResult, debug_prompt: prompt, debug_raw_response: content };
         } catch (error) {
             console.error("AI Readings Error:", error);
             throw error;

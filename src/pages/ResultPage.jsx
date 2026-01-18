@@ -219,10 +219,27 @@ const ResultPage = () => {
                                 </div>
 
                                 {/* Debug Prompt Section */}
-                                <div className="prompt-section" style={{ marginTop: '2rem', borderTop: '1px solid rgba(255,215,0,0.1)', paddingTop: '1rem' }}>
+                                <div className="prompt-section" style={{
+                                    gridColumn: '1 / -1',
+                                    marginTop: '2rem',
+                                    borderTop: '1px solid rgba(255,215,0,0.1)',
+                                    paddingTop: '1rem'
+                                }}>
                                     <h4 className="reading-label" style={{ fontSize: '1rem', color: '#aaa' }}>📜 Prompt Used (Debug)</h4>
                                     <div className="oracle-prompt-box">
-                                        {aiResult.debug_prompt}
+                                        {aiResult.debug_prompt || "프롬프트 정보를 불러오는 중입니다..."}
+                                    </div>
+                                </div>
+
+                                {/* Debug Raw Response Section */}
+                                <div className="raw-response-section" style={{
+                                    gridColumn: '1 / -1',
+                                    marginTop: '1rem',
+                                    paddingTop: '1rem'
+                                }}>
+                                    <h4 className="reading-label" style={{ fontSize: '1rem', color: '#aaa' }}>🤖 Raw AI Response (JSON)</h4>
+                                    <div className="oracle-prompt-box">
+                                        {aiResult.debug_raw_response || "원본 데이터가 없습니다."}
                                     </div>
                                 </div>
                             </div>
